@@ -1,5 +1,5 @@
 <ion-view view-title="Products">
-    <ion-content>
+    <ion-content has-bouncing="true">
         <div class="list card" ng-repeat="(key, product) in products" ui-sref="app.product({productId: key})">
             <div class="item ">
                 <h2>{{product.name}}</h2>
