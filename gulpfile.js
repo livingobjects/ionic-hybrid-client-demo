@@ -50,32 +50,3 @@ gulp.task('git-check', function(done) {
     }
     done();
 });
-
-/**
-  FOR DEMO ONLY
-*/
-var express = require('express'),
-    refresh = require('gulp-livereload'),
-    livereload = require('connect-livereload'),
-    livereloadport = 35729,
-    serverport = 9100,
-    server = express();
-
-server.use(livereload({
-    port: livereloadport
-}));
-
-server.use(express.static('./www'));
-
-gulp.task('run', [], function() {
-    // Start webserver
-    server.listen(serverport);
-    // Start live reload
-    refresh.listen(livereloadport);
-
-    gulp.watch(['./scss/**/*.scss'], [
-        'sass'
-    ]);
-
-    gulp.watch('./www/**').on('change', refresh.changed);
-});
