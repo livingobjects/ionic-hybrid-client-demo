@@ -1,6 +1,6 @@
 <ion-view view-title="Products">
     <ion-content>
-        <div class="list card" ng-repeat="product in products">
+        <div class="list card" ng-repeat="(key, product) in products" ui-sref="app.product({productId: key})">
             <div class="item ">
                 <h2>{{product.name}}</h2>
                 <p>{{product.title}}</p>
@@ -9,7 +9,6 @@
                 <img src="{{product.img}}">
                 <p ng-bind-html="product.excerpt"></p>
             </div>
-
         </div>
     </ion-content>
 </ion-view>
