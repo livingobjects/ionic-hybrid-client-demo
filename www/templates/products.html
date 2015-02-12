@@ -1,5 +1,15 @@
 <ion-view view-title="Products">
     <ion-content>
-        {{products}}
+        <div class="list card" ng-repeat="product in products">
+            <div class="item ">
+                <h2>{{product.name}}</h2>
+                <p>{{product.title}}</p>
+            </div>
+            <div class="item item-body">
+                <img src="{{product.img}}">
+                <p ng-bind-html="product.excerpt"></p>
+            </div>
+
+        </div>
     </ion-content>
 </ion-view>
