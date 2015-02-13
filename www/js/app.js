@@ -20,7 +20,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $logProvider, $compileProvider) {
+
+    $logProvider.debugEnabled(false);
+    $compileProvider.debugInfoEnabled(false);
 
     $stateProvider.state('app', {
         url: "/app",
